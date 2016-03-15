@@ -5,6 +5,9 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<div class="pull-right">
+    @Html.ActionLink("Logout", "Logout", "Admin", null, new { @class = "btn btn-default" })
+</div>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3>All Products</h3>
@@ -37,6 +40,6 @@
         </table>
     </div>
     <div class="panel-footer">
-        @Html.ActionLink("Add a new product", "Create", null, new { @class="btn btn-default"})
+        @Html.ActionLink("Add a new product", "Create", null, new { @class = "btn btn-default" })
     </div>
 </div>
