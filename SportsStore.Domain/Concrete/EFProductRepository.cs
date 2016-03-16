@@ -10,7 +10,6 @@
         private readonly EFDbContext _context = new EFDbContext();
         public IEnumerable<Product> Products => _context.Products;
 
-
         public void SaveProduct(Product product)
         {
             if (product.ProductID == 0)
@@ -26,6 +25,8 @@
                     entity.Description = product.Description;
                     entity.Price = product.Price;
                     entity.Category = product.Category;
+                    entity.ImageData = product.ImageData;
+                    entity.ImageMimeType = product.ImageMimeType;
                 }
             }
 
@@ -35,7 +36,7 @@
         public Product DeleteProduct(int productId)
         {
             var entity = _context.Products.Find(productId);
-            if (entity!=null)
+            if (entity != null)
             {
                 _context.Products.Remove(entity);
                 _context.SaveChanges();
