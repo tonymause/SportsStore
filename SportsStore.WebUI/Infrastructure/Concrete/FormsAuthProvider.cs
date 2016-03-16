@@ -15,5 +15,10 @@ namespace SportsStore.WebUI.Infrastructure.Concrete
 
             return result;
         }
+
+        public void Signout()
+        {
+            FormsAuthentication.SignOut();
+        }
     }
 }
